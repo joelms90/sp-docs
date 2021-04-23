@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Locations. - Simplified Practice API Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Locations.";
+    var mkdocs_page_input_path = "locations..md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Simplified Practice API Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tenancy-auth/">Tenancy Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../user-auth/">User Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../locations.md">Locations</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Simplified Practice API Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Locations.</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="locations">LOCATIONS</h2>
+<p><strong>Page:</strong> LOCATIONS  <br />
+<strong>Method:</strong> POST <br />
+<strong>Name:</strong> New LOCATION <br />
+<strong>Description:</strong> ADD New LOCATION  <br />
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/location     </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"name": "Michigan Clinic", (type: string, required: true, description: Name of location )
+"street": "Luettgen Lock", (type: string, optional: true, description: Street of location )
+"city": "Port", (type: string, optional: true, description: City of location )
+"state": "Michigan", (type: string, optional: true, description: State of location )
+"zip": "07110", (type: string, optional: true, description: Zip code of location )
+"phone": "+1-654-379-7757", (type: string, optional: true, description: Phone of location )
+&lt;strong&gt;"email&lt;/strong&gt;": "lemke.julianne@aufderhar.com", (type: string, optional: true, Description: email of location )
+"timezone": "Africa/Malabo", (type: string, required: true, description: Timezone of location )
+"tax_id": "92411886", (type: string, optional: true, description: Tax id of location )
+"ndi_number": "95756910", (type: string, optional: true, description: NDI number of location )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+              "id": 1,
+              "name": "Michigan Clinic",
+              "street": "Luettgen Lock",
+              "city": "Port",
+              "state": "Michigan",
+              "zip": "07110",
+              "phone": "+1-654-379-7757",
+              "email": "lemke.julianne@aufderhar.com",
+              "timezone": "Africa/Malabo",
+              "tax_id": "92411886",
+              "ndi_number": "95756910",
+              "created_by": 1,
+              "created_at": "2021-04-02T02:53:46.000000Z",
+              "updated_at": "2021-04-02T02:53:46.000000Z"
+      ]
+    }
+
+ERRORS:
+
+    Status: 404 Not Found## LOCATIONS        ## LOCATIONS
+      &lt;strong&gt;Page:&lt;/strong&gt; LOCATIONS        ## LOCATIONS
+</code></pre>
+<p><strong>Method:</strong> GET
+<strong>Name:</strong> GET LOCATIONS
+<strong>Description:</strong> GET LOCATIONS
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/location </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": {
+        [
+          "id": 1,
+          "name": "Michigan Clinic",
+          "street": "Luettgen Lock",
+          "city": "Port",
+          "state": "Michigan",
+          "zip": "07110",
+          "phone": "+1-654-379-7757",
+          "email": "lemke.julianne@aufderhar.com",
+          "timezone": "Africa/Malabo",
+          "tax_id": "92411886",
+          "ndi_number": "95756910",
+          "created_by": 1,
+          "created_at": "2021-04-02T02:53:46.000000Z",
+          "updated_at": "2021-04-02T02:53:46.000000Z"
+        ]
+      },
+      {
+        [
+          "id": 2,
+          "name": "Michigan Clinic2",
+          "street": "Luettgen Lock",
+          "city": "Port",
+          "state": "Michigan",
+          "zip": "07123",
+          "phone": "+1-654-379-7758",
+          "email": "lemke.julianne@aufderhar.com",
+          "timezone": "Africa/Malabo",
+          "tax_id": "92411836",
+          "ndi_number": "95256910",
+          "created_by": 1,
+          "created_at": "2021-04-02T02:53:46.000000Z",
+          "updated_at": "2021-04-02T02:53:46.000000Z"
+        ]
+      }
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="locations_1">LOCATIONS</h2>
+<p><strong>Page:</strong> LOCATIONS  <br />
+<strong>Method:</strong> PATCH
+<strong>Name:</strong> UPDATE LOCATION
+<strong>Description:</strong> UPDATE LOCATION
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/location/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"name": "Michigan Clinic", (type: string, required: true, description: Name of location )
+"street": "Luettgen Lock", (type: string, optional: true, description: Street of location )
+"city": "Port", (type: string, optional: true, description: City of location )
+"state": "Michigan", (type: string, optional: true, description: State of location )
+"zip": "07110", (type: string, optional: true, description: Zip code of location )
+"phone": "+1-654-379-7757", (type: string, optional: true, description: Phone of location )
+&lt;strong&gt;"email&lt;/strong&gt;": "lemke.julianne@aufderhar.com", (type: string, optional: true, Description: email of location )
+"timezone": "Africa/Malabo", (type: string, required: true, description: Timezone of location )
+"tax_id": "92411886", (type: string, optional: true, description: Tax id of location )
+"ndi_number": "95756910", (type: string, optional: true, description: NDI number of location )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<p><strong>Method:</strong> GET
+<strong>Name:</strong> SHOW LOCATION
+<strong>Description:</strong> SHOW LOCATION
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/location/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"id": 1, (type: string, required: true, description: Id of location )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+              "id": 1,
+              "name": "Michigan Clinic",
+              "street": "Luettgen Lock",
+              "city": "Port",
+              "state": "Michigan",
+              "zip": "07110",
+              "phone": "+1-654-379-7757",
+              "email": "lemke.julianne@aufderhar.com",
+              "timezone": "Africa/Malabo",
+              "tax_id": "92411886",
+              "ndi_number": "95756910",
+              "created_by": 1,
+              "created_at": "2021-04-02T02:53:46.000000Z",
+              "updated_at": "2021-04-02T02:53:46.000000Z"
+      ]
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="roles">ROLES</h2>
+<p><strong>Page:</strong> ROLES              <br />
+<strong>Method:</strong> POST <br />
+<strong>Name:</strong> New ROLE <br />
+<strong>Description:</strong> ADD New ROLE  <br />
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/role     </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"group": "Josianne Haley", (type: string, required: true, description: Group of role )
+"slug": "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam", (type: string, required: true, description: Slug for role )
+"name": "Pauline Schroeder", (type: string, required: true, description: Name of role )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+        "id" =&gt; 1
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+      ]
+    }
+
+ERRORS:
+
+    Status: 404 Not Found
+
+
+    ## ROLES            ## ROLES            
+      &lt;strong&gt;Page:&lt;/strong&gt; ROLES            ## ROLES
+</code></pre>
+<p><strong>Method:</strong> GET
+<strong>Name:</strong> GET ROLES
+<strong>Description:</strong> GET ROLES
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/role </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": {
+        [
+          "id" =&gt; 1
+          "group" =&gt; "Steve Rempel"
+          "slug" =&gt; "et-pariatur-quo-ex-rerum-fugiat-pariatur-adipisci"
+          "name" =&gt; "Dr. Owen Gaylord"
+          "updated_at" =&gt; "2021-04-07 06:03:04"
+          "created_at" =&gt; "2021-04-07 06:03:04"
+        ]
+      },
+      {
+        [
+          "id" =&gt; 2
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+        ]
+      }
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="roles_1">ROLES</h2>
+<p><strong>Page:</strong> ROLES              <br />
+<strong>Method:</strong> PATCH
+<strong>Name:</strong> UPDATE ROLE
+<strong>Description:</strong> UPDATE ROLE
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/role/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"group": "Josianne Haley", (type: string, required: true, description: Group of role )
+"slug": "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam", (type: string, required: true, description: Slug for role )
+"name": "Pauline Schroeder", (type: string, required: true, description: Name of role )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="roles_2">ROLES</h2>
+<p><strong>Page:</strong> ROLES              <br />
+<strong>Method:</strong> GET
+<strong>Name:</strong> SHOW ROLE
+<strong>Description:</strong> SHOW ROLE
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/role/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"id": 1, (type: string, required: true, description: Id of role )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+        "id" =&gt; 1
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+      ]
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="permission">PERMISSION</h2>
+<p><strong>Page:</strong> PERMISSION             <br />
+<strong>Method:</strong> POST <br />
+<strong>Name:</strong> New PERMISSION <br />
+<strong>Description:</strong> ADD New PERMISSION  <br />
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/permission     </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"group": "Josianne Haley", (type: string, required: true, description: Group of permission )
+"slug": "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam", (type: string, required: true, description: Slug for permission )
+"name": "Pauline Schroeder", (type: string, required: true, description: Name of permission )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+        "id" =&gt; 1
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+      ]
+    }
+
+ERRORS:
+
+    Status: 404 Not Found
+</code></pre>
+<h2 id="permission_1">PERMISSION</h2>
+<p><strong>Page:</strong> PERMISSION <br />
+        ## PERMISSION        ## PERMISSION
+          <strong>Page:</strong> PERMISSION        ## PERMISSION  <br />
+<strong>Method:</strong> GET
+<strong>Name:</strong> GET PERMISSIONS
+<strong>Description:</strong> GET PERMISSIONS
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/permission </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 Ok</p>
+<pre><code>    Example:
+    {
+      "data": {
+        [
+          "id" =&gt; 1
+          "group" =&gt; "Steve Rempel"
+          "slug" =&gt; "et-pariatur-quo-ex-rerum-fugiat-pariatur-adipisci"
+          "name" =&gt; "Dr. Owen Gaylord"
+          "updated_at" =&gt; "2021-04-07 06:03:04"
+          "created_at" =&gt; "2021-04-07 06:03:04"
+        ]
+      },
+      {
+        [
+          "id" =&gt; 2
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+        ]
+      }
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="permission_2">PERMISSION</h2>
+<p><strong>Page:</strong> PERMISSION <br />
+<strong>Method:</strong> PATCH
+<strong>Name:</strong> UPDATE PERMISSION
+<strong>Description:</strong> UPDATE PERMISSION
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/permission/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"group": "Josianne Haley", (type: string, required: true, description: Group of permission )
+"slug": "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam", (type: string, required: true, description: Slug for permission )
+"name": "Pauline Schroeder", (type: string, required: true, description: Name of permission )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>ERRORS:
+    Status: 404 Not Found
+</code></pre>
+<h2 id="permission_3">PERMISSION</h2>
+<p><strong>Page:</strong> PERMISSION         <br />
+<strong>Method:</strong> GET
+<strong>Name:</strong> SHOW PERMISSION
+<strong>Description:</strong> SHOW PERMISSION
+<strong>Endpoint:</strong> http://{{subdomain}}.{{domain}}/permission/{{id}}</p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Parameters:
+"id": 1, (type: string, required: true, description: Id of permission )
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 204 Ok</p>
+<pre><code>    Example:
+    {
+      "data": [
+        "id" =&gt; 1
+        "group" =&gt; "Josianne Haley"
+        "slug" =&gt; "nostrum-aliquid-mollitia-eum-vel-ea-velit-ipsam"
+        "name" =&gt; "Pauline Schroeder"
+        "updated_at" =&gt; "2021-04-07 06:00:30"
+        "created_at" =&gt; "2021-04-07 06:00:30"
+      ]
+    }
+
+ERRORS:
+    Status: 404 Not Found
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
