@@ -3,5 +3,4 @@ nav:
     - Home: index.md
     - Tenancy Authentication: tenancy-auth.md
     - User Authentication: user-auth.md
-    - Locations: locations.md
 theme: readthedocs
