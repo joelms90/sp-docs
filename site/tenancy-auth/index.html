@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Tenancy Authentication - Simplified Practice API Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tenancy Authentication";
+    var mkdocs_page_input_path = "tenancy-auth.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Simplified Practice API Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tenancy Authentication</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tenancy-login">Tenancy Login</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tenancy-register">Tenancy Register</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tenancy-logout">Tenancy Logout</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../user-auth/">User Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../locations.md">Locations</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Simplified Practice API Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tenancy Authentication</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tenancy-authentication">Tenancy Authentication</h1>
+<h2 id="tenancy-login">Tenancy Login</h2>
+<p><strong>Page:</strong> Tenancy Login  <br />
+  <strong>Method:</strong> POST   <br />
+  <strong>Name:</strong> Tenancy Login    <br />
+  <strong>Description:</strong> Login for main domain   <br />
+  <strong>Endpoint:</strong> http://{{domain}}/auth/login       </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers CSRF:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Headers Token:  
+"Authorization": "Bearer ${token}", (type: string, required: true, description: Bearer token)
+
+Parameters:
+"username": "tester", (type: string, required: true, description: Username of   main domain )
+"password": "password" (type: string, required: true, description: Password for domain user)
+</code></pre>
+<p><strong>Responses:</strong></p>
+<pre><code>SUCCESS:
+
+    Status: 200 Ok
+
+
+    Example:
+    {
+      "data": [
+        {
+        "token": "10|fQAK7wdQkTf44RUuDZWRfIyw3qGv5hQvIWOLHI97",
+        "user": {
+          "id": 3,
+          "name": "tester",
+          "username": "tester",
+          "created_at": "2021-03-27T18:06:27.000000Z",
+          "updated_at": "2021-03-27T18:06:27.000000Z"
+          }
+        }
+      ]
+    }
+
+
+
+ERRORS:
+
+    Status: 422 Unprocessable Entity
+
+    Example:
+
+    {
+      "error": {
+          "password": [
+              "The password field is required."
+          ]
+      },
+      "message": "Failed validation"
+    }
+
+
+    Status: 422
+
+    Example:
+
+    {
+      "error": [],
+      "message": "Invalid Credentials"
+    }
+</code></pre>
+<h2 id="tenancy-register">Tenancy Register</h2>
+<p><strong>Page:</strong> Tenancy Register <br />
+  <strong>Method:</strong> POST <br />
+  <strong>Name:</strong> Tenancy Register  <br />
+  <strong>Description:</strong> Register For Tenancy  <br />
+  <strong>Endpoint:</strong> http://{{domain}}/auth/register    </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers CSRF:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Headers Token:  
+"Authorization": "Bearer ${token}", (type: string, required: true, description: Bearer token)
+
+Parameters:
+"first": "tester", (type: string, required: true, description: First name of user of main domain )
+"last": "tester", (type: string, required: true, description: Last name of user of main domain )
+"username": "tester", (type: string, required: true, description: Username of   main domain )
+"password": "password" (type: string, required: true, description: Password for domain user)
+"password_confirmation": "password_confirmation" (type: string, required: true, description: Password confirmation for domain user)
+"phone": "5580278960" (type: string, required: true, description: Password confirmation for domain user)
+</code></pre>
+<p><strong>Responses:</strong></p>
+<pre><code>SUCCESS:
+    Status: 200 Ok
+
+
+    Example:
+    {
+      "data": [
+        {
+        "token": "10|fQAK7wdQkTf44RUuDZWRfIyw3qGv5hQvIWOLHI97",
+        "user": {
+          "id": 3,
+          "name": "tester",
+          "username": "tester",
+          "created_at": "2021-03-27T18:06:27.000000Z",
+          "updated_at": "2021-03-27T18:06:27.000000Z"
+          }
+        }
+      ]
+    }
+
+
+
+ERRORS:
+
+    Status: 422 Unprocessable Entity
+
+    Example:
+
+    {
+      "error": {
+          "password": [
+              "The password field is required."
+          ]
+      },
+      "message": "Failed validation"
+    }
+
+
+    Status: 422
+
+    Example:
+
+    {
+      "error": [],
+      "message": "Invalid Credentials"
+    }
+</code></pre>
+<h2 id="tenancy-logout">Tenancy Logout</h2>
+<p><strong>Page:</strong> Tenancy Logout <br />
+<strong>Method:</strong> POST <br />
+<strong>Name:</strong> Tenancy Logout  <br />
+<strong>Description:</strong> Logout For Tenancy  <br />
+<strong>Endpoint:</strong> http://{{domain}}/auth/logout    </p>
+<p><strong>Request:</strong></p>
+<pre><code>Headers CSRF:  
+"X-XSRF-TOKEN" : "eyJpdiI6IjhmR...", (type: string, required: true, description: Obtain from GET request to "http://{{domain}}/sanctum/csrf-cookie"
+
+Headers Token:  
+"Authorization": "Bearer ${token}", (type: string, required: true, description: Bearer token)
+</code></pre>
+<p><strong>Responses:</strong>
+    SUCCESS:
+        Status: 200 OK</p>
+<pre><code>ERRORS:
+    Status: 500 Internal Server Error
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user-auth/" class="btn btn-neutral float-right" title="User Authentication">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../user-auth/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
